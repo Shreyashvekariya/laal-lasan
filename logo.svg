@@ -1,0 +1,11 @@
+<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rectangle -->
+  <rect width="200" height="60" fill="transparent"/>
+  
+  <!-- Hanger Icon -->
+  <path d="M100 10 L120 30 L140 30 L140 35 L60 35 L60 30 L80 30 L100 10" fill="#4a90e2" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="100" y1="10" x2="100" y2="5" stroke="#2c3e50" stroke-width="2"/>
+  
+  <!-- Text -->
+  <text x="100" y="55" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">StyleRent</text>
+</svg>

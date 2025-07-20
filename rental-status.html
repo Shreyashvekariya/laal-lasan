@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleRent - Rental Status</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rental-status.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.svg" alt="StyleRent Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="rental-status.html" class="active">Rental Status</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="status-container">
+        <div class="status-header">
+            <h1>Your Rental Status</h1>
+            <p>Track and manage your current and past clothing rentals</p>
+        </div>
+
+        <div class="status-tabs">
+            <button class="tab-btn active" data-tab="active">Active Rentals</button>
+            <button class="tab-btn" data-tab="upcoming">Upcoming Rentals</button>
+            <button class="tab-btn" data-tab="past">Past Rentals</button>
+        </div>
+
+        <div class="status-search">
+            <input type="text" id="status-search-input" placeholder="Search by rental ID or item name...">
+            <button id="status-search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="tab-content active" id="active-rentals">
+            <div class="rental-card">
+                <div class="rental-header">
+                    <h3>Designer Evening Gown</h3>
+                    <span class="rental-id">Rental ID: RNT-12345</span>
+                </div>
+                <div class="rental-details">
+                    <div class="rental-image" style="background-image: url('img/dress1.jpg');"></div>
+                    <div class="rental-info">
+                        <p><i class="fas fa-calendar-alt"></i> Rental Period: <span>Nov 15, 2023 - Nov 18, 2023</span></p>
+                        <p><i class="fas fa-clock"></i> Time Remaining: <span class="time-remaining">2 days, 5 hours</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Delivery Status: <span class="delivery-status delivered">Delivered</span></p>
+                        <p><i class="fas fa-tag"></i> Category: <span>Formal Wear</span></p>
+                        <p><i class="fas fa-tshirt"></i> Size: <span>M</span></p>
+                    </div>
+                </div>
+                <div class="rental-actions">
+                    <button class="btn extend-btn" data-id="RNT-12345">Extend Rental</button>
+                    <button class="btn return-btn" data-id="RNT-12345">Request Return Pickup</button>
+                </div>
+            </div>
+
+            <div class="rental-card">
+                <div class="rental-header">
+                    <h3>Premium Business Suit</h3>
+                    <span class="rental-id">Rental ID: RNT-12346</span>
+                </div>
+                <div class="rental-details">
+                    <div class="rental-image" style="background-image: url('img/suit1.jpg');"></div>
+                    <div class="rental-info">
+                        <p><i class="fas fa-calendar-alt"></i> Rental Period: <span>Nov 10, 2023 - Nov 17, 2023</span></p>
+                        <p><i class="fas fa-clock"></i> Time Remaining: <span class="time-remaining">1 day, 8 hours</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Delivery Status: <span class="delivery-status delivered">Delivered</span></p>
+                        <p><i class="fas fa-tag"></i> Category: <span>Business Attire</span></p>
+                        <p><i class="fas fa-tshirt"></i> Size: <span>L</span></p>
+                    </div>
+                </div>
+                <div class="rental-actions">
+                    <button class="btn extend-btn" data-id="RNT-12346">Extend Rental</button>
+                    <button class="btn return-btn" data-id="RNT-12346">Request Return Pickup</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="upcoming-rentals">
+            <div class="rental-card">
+                <div class="rental-header">
+                    <h3>Sequin Party Dress</h3>
+                    <span class="rental-id">Rental ID: RNT-12347</span>
+                </div>
+                <div class="rental-details">
+                    <div class="rental-image" style="background-image: url('img/party1.jpg');"></div>
+                    <div class="rental-info">
+                        <p><i class="fas fa-calendar-alt"></i> Rental Period: <span>Dec 20, 2023 - Dec 22, 2023</span></p>
+                        <p><i class="fas fa-clock"></i> Starts In: <span class="time-remaining">35 days</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Delivery Status: <span class="delivery-status pending">Pending</span></p>
+                        <p><i class="fas fa-tag"></i> Category: <span>Party Wear</span></p>
+                        <p><i class="fas fa-tshirt"></i> Size: <span>XS</span></p>
+                    </div>
+                </div>
+                <div class="rental-actions">
+                    <button class="btn modify-btn" data-id="RNT-12347">Modify Rental</button>
+                    <button class="btn cancel-btn" data-id="RNT-12347">Cancel Rental</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="past-rentals">
+            <div class="rental-card">
+                <div class="rental-header">
+                    <h3>Casual Weekend Set</h3>
+                    <span class="rental-id">Rental ID: RNT-12340</span>
+                </div>
+                <div class="rental-details">
+                    <div class="rental-image" style="background-image: url('img/casual1.jpg');"></div>
+                    <div class="rental-info">
+                        <p><i class="fas fa-calendar-alt"></i> Rental Period: <span>Oct 5, 2023 - Oct 8, 2023</span></p>
+                        <p><i class="fas fa-check-circle"></i> Status: <span class="status-completed">Completed</span></p>
+                        <p><i class="fas fa-tag"></i> Category: <span>Casual Wear</span></p>
+                        <p><i class="fas fa-tshirt"></i> Size: <span>S</span></p>
+                    </div>
+                </div>
+                <div class="rental-actions">
+                    <button class="btn review-btn" data-id="RNT-12340">Write Review</button>
+                    <button class="btn rent-again-btn" data-id="3">Rent Again</button>
+                </div>
+            </div>
+
+            <div class="rental-card">
+                <div class="rental-header">
+                    <h3>Winter Coat Collection</h3>
+                    <span class="rental-id">Rental ID: RNT-12338</span>
+                </div>
+                <div class="rental-details">
+                    <div class="rental-image" style="background-image: url('img/winter1.jpg');"></div>
+                    <div class="rental-info">
+                        <p><i class="fas fa-calendar-alt"></i> Rental Period: <span>Sep 15, 2023 - Sep 22, 2023</span></p>
+                        <p><i class="fas fa-check-circle"></i> Status: <span class="status-completed">Completed</span></p>
+                        <p><i class="fas fa-tag"></i> Category: <span>Seasonal</span></p>
+                        <p><i class="fas fa-tshirt"></i> Size: <span>XL</span></p>
+                    </div>
+                </div>
+                <div class="rental-actions">
+                    <button class="btn review-btn" data-id="RNT-12338">Write Review</button>
+                    <button class="btn rent-again-btn" data-id="5">Rent Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extend Rental Modal -->
+    <div id="extend-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Extend Your Rental</h2>
+            <p>Current rental period: <span id="current-period">Nov 15, 2023 - Nov 18, 2023</span></p>
+            <form id="extend-form">
+                <div class="form-group">
+                    <label for="extension-days">Extend by:</label>
+                    <select id="extension-days" required>
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="7">1 Week</option>
+                    </select>
+                </div>
+                <div class="extension-cost">
+                    <p>Extension Cost: <span id="extension-cost">$45.00</span></p>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn">Confirm Extension</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Return Request Modal -->
+    <div id="return-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request Return Pickup</h2>
+            <form id="return-form">
+                <div class="form-group">
+                    <label for="return-date">Preferred Pickup Date:</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-time">Preferred Time Slot:</label>
+                    <select id="return-time" required>
+                        <option value="morning">Morning (9AM - 12PM)</option>
+                        <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                        <option value="evening">Evening (5PM - 8PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="return-notes">Additional Instructions:</label>
+                    <textarea id="return-notes"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn">Schedule Pickup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Write a Review</h2>
+            <div id="review-item-details">
+                <!-- Item details will be populated by JavaScript -->
+            </div>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <div class="rating-stars">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="rating-value" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-title">Review Title:</label>
+                    <input type="text" id="review-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Your Review:</label>
+                    <textarea id="review-text" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StyleRent</h3>
+                <p>Your premium clothing rental service for any occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="rental-status.html">Rental Status</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Style City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@stylerent.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 StyleRent. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rental-status.js"></script>
+</body>
+</html>

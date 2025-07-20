@@ -1,0 +1,11 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="16" fill="#4a90e2"/>
+  
+  <!-- Hanger Icon -->
+  <path d="M16 6 L22 14 L26 14 L26 16 L6 16 L6 14 L10 14 L16 6" fill="white" stroke="#2c3e50" stroke-width="1"/>
+  <line x1="16" y1="6" x2="16" y2="4" stroke="#2c3e50" stroke-width="1"/>
+  
+  <!-- Text -->
+  <text x="16" y="26" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">SR</text>
+</svg>

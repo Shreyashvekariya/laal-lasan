@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleRent - Inventory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.svg" alt="StyleRent Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="inventory.html" class="active">Inventory</a></li>
+                <li><a href="rental-status.html">Rental Status</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="inventory-header">
+        <h1>Clothing Inventory</h1>
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for items...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-options">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="formal">Formal Wear</option>
+                    <option value="casual">Casual Wear</option>
+                    <option value="business">Business Attire</option>
+                    <option value="party">Party Wear</option>
+                    <option value="seasonal">Seasonal</option>
+                </select>
+                <select id="size-filter">
+                    <option value="all">All Sizes</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+                <select id="sort-by">
+                    <option value="popularity">Sort by: Popularity</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="inventory-grid">
+        <!-- Item 1 -->
+        <div class="inventory-item" data-id="1" data-category="formal" data-size="m">
+            <div class="item-image" style="background-image: url('img/dress1.jpg');"></div>
+            <div class="item-details">
+                <h3>Designer Evening Gown</h3>
+                <p class="item-description">Elegant black evening gown perfect for formal events and galas.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Formal Wear</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size M</span>
+                </div>
+                <div class="item-availability">
+                    <span class="available"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$45/day</p>
+                    <p class="discount">$120/week</p>
+                </div>
+                <button class="btn rent-btn" data-id="1">Rent Now</button>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="inventory-item" data-id="2" data-category="business" data-size="l">
+            <div class="item-image" style="background-image: url('img/suit1.jpg');"></div>
+            <div class="item-details">
+                <h3>Premium Business Suit</h3>
+                <p class="item-description">Professional navy blue suit, perfect for business meetings and interviews.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Business Attire</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size L</span>
+                </div>
+                <div class="item-availability">
+                    <span class="available"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$50/day</p>
+                    <p class="discount">$140/week</p>
+                </div>
+                <button class="btn rent-btn" data-id="2">Rent Now</button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="inventory-item" data-id="3" data-category="casual" data-size="s">
+            <div class="item-image" style="background-image: url('img/casual1.jpg');"></div>
+            <div class="item-details">
+                <h3>Casual Weekend Set</h3>
+                <p class="item-description">Comfortable and stylish casual outfit for weekend outings.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Casual Wear</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size S</span>
+                </div>
+                <div class="item-availability">
+                    <span class="available"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$30/day</p>
+                    <p class="discount">$80/week</p>
+                </div>
+                <button class="btn rent-btn" data-id="3">Rent Now</button>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="inventory-item" data-id="4" data-category="party" data-size="xs">
+            <div class="item-image" style="background-image: url('img/party1.jpg');"></div>
+            <div class="item-details">
+                <h3>Sequin Party Dress</h3>
+                <p class="item-description">Dazzling sequin dress that will make you stand out at any party.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Party Wear</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size XS</span>
+                </div>
+                <div class="item-availability">
+                    <span class="available"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$40/day</p>
+                    <p class="discount">$110/week</p>
+                </div>
+                <button class="btn rent-btn" data-id="4">Rent Now</button>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="inventory-item" data-id="5" data-category="seasonal" data-size="xl">
+            <div class="item-image" style="background-image: url('img/winter1.jpg');"></div>
+            <div class="item-details">
+                <h3>Winter Coat Collection</h3>
+                <p class="item-description">Premium winter coat to keep you warm and stylish during cold months.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Seasonal</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size XL</span>
+                </div>
+                <div class="item-availability">
+                    <span class="available"><i class="fas fa-check-circle"></i> Available</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$35/day</p>
+                    <p class="discount">$95/week</p>
+                </div>
+                <button class="btn rent-btn" data-id="5">Rent Now</button>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="inventory-item" data-id="6" data-category="formal" data-size="m">
+            <div class="item-image" style="background-image: url('img/dress2.jpg');"></div>
+            <div class="item-details">
+                <h3>Red Carpet Gown</h3>
+                <p class="item-description">Stunning red gown designed for special occasions and red carpet events.</p>
+                <div class="item-meta">
+                    <span class="item-category"><i class="fas fa-tag"></i> Formal Wear</span>
+                    <span class="item-size"><i class="fas fa-tshirt"></i> Size M</span>
+                </div>
+                <div class="item-availability">
+                    <span class="unavailable"><i class="fas fa-times-circle"></i> Currently Rented</span>
+                </div>
+                <div class="item-pricing">
+                    <p class="price">$55/day</p>
+                    <p class="discount">$150/week</p>
+                </div>
+                <button class="btn rent-btn disabled" data-id="6" disabled>Unavailable</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="rental-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Rent Item</h2>
+            <div id="rental-item-details">
+                <!-- Item details will be populated by JavaScript -->
+            </div>
+            <form id="rental-form">
+                <div class="form-group">
+                    <label for="rental-start-date">Start Date:</label>
+                    <input type="date" id="rental-start-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="rental-duration">Rental Duration:</label>
+                    <select id="rental-duration" required>
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="7">1 Week</option>
+                        <option value="14">2 Weeks</option>
+                        <option value="30">1 Month</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rental-notes">Special Instructions (Optional):</label>
+                    <textarea id="rental-notes"></textarea>
+                </div>
+                <div class="rental-summary">
+                    <h3>Rental Summary</h3>
+                    <p>Item: <span id="summary-item-name"></span></p>
+                    <p>Duration: <span id="summary-duration"></span></p>
+                    <p>Total Cost: <span id="summary-cost"></span></p>
+                </div>
+                <button type="submit" class="btn">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StyleRent</h3>
+                <p>Your premium clothing rental service for any occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="rental-status.html">Rental Status</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Style City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@stylerent.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 StyleRent. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/inventory.js"></script>
+</body>
+</html>

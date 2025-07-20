@@ -1,0 +1,348 @@
+/* Rental Status Page Specific Styles */
+
+/* Status Container */
+.status-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.status-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.status-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.status-header p {
+    color: var(--gray-color);
+    font-size: 1.1rem;
+}
+
+/* Status Tabs */
+.status-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-color);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.tab-btn:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+}
+
+.tab-btn.active:after {
+    transform: scaleX(1);
+}
+
+/* Status Search */
+.status-search {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.status-search input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.status-search button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Rental Card */
+.rental-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.rental-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rental-header {
+    background-color: var(--light-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rental-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.rental-id {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    font-weight: 500;
+}
+
+.rental-details {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.rental-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.rental-info {
+    flex: 1;
+}
+
+.rental-info p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rental-info i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.time-remaining {
+    font-weight: 600;
+}
+
+.delivery-status {
+    font-weight: 600;
+}
+
+.delivery-status.delivered {
+    color: var(--success-color);
+}
+
+.delivery-status.pending {
+    color: var(--warning-color);
+}
+
+.delivery-status.processing {
+    color: var(--primary-color);
+}
+
+.status-completed {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.rental-actions {
+    padding: 15px 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.extend-btn, .return-btn, .modify-btn, .cancel-btn, .review-btn, .rent-again-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.extend-btn {
+    background-color: var(--primary-color);
+}
+
+.return-btn {
+    background-color: var(--gray-color);
+}
+
+.modify-btn {
+    background-color: var(--accent-color);
+}
+
+.cancel-btn {
+    background-color: var(--danger-color);
+}
+
+.review-btn {
+    background-color: var(--primary-color);
+}
+
+.rent-again-btn {
+    background-color: var(--success-color);
+}
+
+/* Modal Styles */
+#extend-form, #return-form, #review-form {
+    margin-top: 20px;
+}
+
+.extension-cost {
+    background-color: var(--light-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.extension-cost p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#extension-cost {
+    color: var(--primary-color);
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+
+.rating-stars i {
+    color: var(--light-gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.rating-stars i:hover, .rating-stars i.active {
+    color: var(--warning-color);
+}
+
+#review-item-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+#review-item-details .item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+#review-item-details .item-info h4 {
+    margin-bottom: 5px;
+}
+
+#review-item-details .item-info p {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .status-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .status-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .rental-details {
+        flex-direction: column;
+    }
+
+    .rental-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .rental-actions {
+        flex-direction: column;
+    }
+
+    .rental-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .rental-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .status-search {
+        flex-direction: column;
+    }
+
+    .status-search input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .status-search button {
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
